@@ -9,20 +9,14 @@ const port = process.env.PORT || 8000
 const views = (path.join(__dirname,"../templates/views"))
 const partialPath = (path.join(__dirname,"../templates/partials"))
 
-console.log(__dirname)
-
-
-
 // express run from top to bottom and we are using here "app.use(express.static(staticPath))" means express will come from top and whenever it look this method it will send response to client side
 // here we are using "express.static" that meand we are telling to express that we have to show static page now
 // app.use(express.static(staticPath))
 
 app.use(express.static('public'))
-
 hbs.registerPartials(partialPath)
 
 app.set("views",views)
-
 app.set("view engine","hbs")
 
 
